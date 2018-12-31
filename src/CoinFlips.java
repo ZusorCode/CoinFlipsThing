@@ -1,5 +1,3 @@
-import sun.misc.Unsafe;
-
 import javax.tools.JavaCompiler;
 import javax.tools.ToolProvider;
 import java.io.File;
@@ -17,6 +15,9 @@ public class CoinFlips extends ConsoleProgram
             URLClassLoader classLoader = URLClassLoader.newInstance(new URL[] { new File(".").toURI().toURL() });
             Class<?> cls = Class.forName(this.getClass().getSimpleName() + "Solution", false, classLoader);
             ((ConsoleProgram) cls.newInstance()).run();
+            cls = null;
+            classLoader.clearAssertionStatus();
+            classLoader.close();
         } catch (Exception e) {
             e.printStackTrace();
         }
