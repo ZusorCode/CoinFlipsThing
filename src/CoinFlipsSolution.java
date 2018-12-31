@@ -24,6 +24,5 @@ public class CoinFlipsSolution extends ConsoleProgram
         System.out.println("tails " + tails);
         System.out.println("% heads " + heads / (double)flips);
         System.out.println("% tails " + tails / (double)flips);
-
     }
 }

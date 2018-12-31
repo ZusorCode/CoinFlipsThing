@@ -22,8 +22,8 @@ public class Grader
             // track custom test
             // track custom test
             // replace any nonalphanumeric characters
-            String normedStudentOutput = StudentOutput.toLowerCase().replace("", "");
-            String normedSolutionOutput = SolutionOutput.toLowerCase().replace("", "");
+            String normedStudentOutput = StudentOutput.toLowerCase().replace(":", "");
+            String normedSolutionOutput = SolutionOutput.toLowerCase().replace(":", "");
             grader.assertEqual(
                     "testing output with seed " + i, normedStudentOutput,
                     normedSolutionOutput, "great!", "not quite.");
