@@ -1,13 +1,13 @@
 /**
  * this is where autograded tests should live.
  */
-import java.util.*;
 
 public class Grader
 {
     public static void main(String [] args)
     {
         Autograder grader = new Autograder();
+        LogIt.init();
 
         for(int i = 1; i <= 3; i++)
         {
@@ -17,13 +17,13 @@ public class Grader
             p1.run();
             Randomizer.getInstance().setSeed(i);
             p2.run();
-            String studentoutput = grader.getOutput("coinflips");
-            String solutionoutput = grader.getOutput("coinflipssolution");
+            String StudentOutput = grader.getOutput("CoinFlips");
+            String SolutionOutput = grader.getOutput("CoinFlipsSolution");
             // track custom test
             // track custom test
             // replace any nonalphanumeric characters
-            String normedStudentOutput = studentoutput.toLowerCase().replace("", "");
-            String normedSolutionOutput = solutionoutput.toLowerCase().replace("", "");
+            String normedStudentOutput = StudentOutput.toLowerCase().replace("", "");
+            String normedSolutionOutput = SolutionOutput.toLowerCase().replace("", "");
             grader.assertEqual(
                     "testing output with seed " + i, normedStudentOutput,
                     normedSolutionOutput, "great!", "not quite.");
